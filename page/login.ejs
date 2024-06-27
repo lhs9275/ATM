@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <title>Login</title>
+</head>
+<link href="ATM.css" rel="stylesheet" type="text/css">
+<body>
+<pre>    
+<h1>회원번호를 입력해주세요</h1>
+
+회원번호 : <input id="number">
+<div class="login" style="position: absolute; top: 200px; left: 200px;">확인</div>
+</pre>
+</body>
+
+<script>
+
+$(document).ready(function () {
+    $('.login').click(function (e) {
+        let clicked = $(this);
+    $.ajax({
+        method: 'GET', // 사용할 HTTP 메서드를 지정합니다.
+        url: '/login', // 동적인 매개변수를 직접 지정합니다.
+    }).done(function (result) {
+        window.location.href = '/login';
+        console.log('실행완료', result);
+        
+    }).fail(function (err) {
+        console.log('에러', err);
+    });
+});
+});
+</script>
+</html>
