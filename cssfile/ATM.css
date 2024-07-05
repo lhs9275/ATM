@@ -1,4 +1,28 @@
-.button{
+.in_button{
+    border-radius: 25px;
+    background: skyblue;
+    padding: 20px;
+    width: 200px;
+    height: 150px;
+}
+
+.out_button{
+    border-radius: 25px;
+    background: skyblue;
+    padding: 20px;
+    width: 200px;
+    height: 150px;
+}
+
+.see_button{
+    border-radius: 25px;
+    background: skyblue;
+    padding: 20px;
+    width: 200px;
+    height: 150px;
+}
+
+.send_button{
     border-radius: 25px;
     background: skyblue;
     padding: 20px;

@@ -3,17 +3,79 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <title>ATM</title>
 </head>
 <link href="ATM.css" rel="stylesheet" type="text/css">
 <body>
-        <div class="button" style="position: absolute; top: 10px; left: 300px;">입금</div>
-        <div class="button" style="position: absolute; top: 210px; left: 300px;">출금</div>
-        <div class="button" style="position: absolute; top: 10px; left: 10px;">송금</div>
-        <div class="button" style="position: absolute; top: 210px; left: 10px;">잔액조회</div>     
-
-
-
-
+        <div class="in_button" style="position: absolute; top: 10px; left: 300px;">입금</div>
+        <div class="out_button" style="position: absolute; top: 210px; left: 300px;">출금</div>
+        <div class="send_button" style="position: absolute; top: 10px; left: 10px;">송금</div>
+        <div class="see_button" style="position: absolute; top: 210px; left: 10px;">잔액조회</div>     
 </body>
+<script>
+$(document).ready(function () {
+    $('.in_button').click(function (e) {
+        let clicked = $(this);
+    $.ajax({
+        method: 'GET', // 사용할 HTTP 메서드를 지정합니다.
+        url: '/input', // 동적인 매개변수를 직접 지정합니다.
+    }).done(function (result) {
+        window.location.href = '/input';
+        console.log('실행완료', result);
+        
+    }).fail(function (err) {
+        console.log('에러', err);
+    });
+});
+});
+
+$(document).ready(function () {
+    $('.out_button').click(function (e) {
+        let clicked = $(this);
+    $.ajax({
+        method: 'GET', // 사용할 HTTP 메서드를 지정합니다.
+        url: '/out', // 동적인 매개변수를 직접 지정합니다.
+    }).done(function (result) {
+        window.location.href = '/out';
+        console.log('실행완료', result);
+        
+    }).fail(function (err) {
+        console.log('에러', err);
+    });
+});
+});
+
+$(document).ready(function () {
+    $('.send_button').click(function (e) {
+        let clicked = $(this);
+    $.ajax({
+        method: 'GET', // 사용할 HTTP 메서드를 지정합니다.
+        url: '/send', // 동적인 매개변수를 직접 지정합니다.
+    }).done(function (result) {
+        window.location.href = '/send';
+        console.log('실행완료', result);
+        
+    }).fail(function (err) {
+        console.log('에러', err);
+    });
+});
+});
+
+$(document).ready(function () {
+    $('.see_button').click(function (e) {
+        let clicked = $(this);
+    $.ajax({
+        method: 'GET', // 사용할 HTTP 메서드를 지정합니다.
+        url: '/see', // 동적인 매개변수를 직접 지정합니다.
+    }).done(function (result) {
+        window.location.href = '/see';
+        console.log('실행완료', result);
+        
+    }).fail(function (err) {
+        console.log('에러', err);
+    });
+});
+});
+</script>
 </html>
